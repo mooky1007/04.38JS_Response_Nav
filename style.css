@@ -15,16 +15,24 @@ body {
     position: relative;
     width: 100%;
     max-width: 1000px;
-    height: 200px;
-    background: #eee;
+    height: 300px;
     overflow: hidden;
+    background: #eee;
 }
 
 header {
     width: 100%;
-    border-bottom: 1px solid #fff;
     display: flex;
     justify-content: center;
+    background: #eee;
+}
+
+.container + .container {
+    margin-top: 50px;
+}
+
+.s-header {
+    max-width: 500px;
 }
 
 header ul {
@@ -115,4 +123,45 @@ header button {
         top: 20px;
         right: 5%;
     }
+}
+
+.s-header header ul {
+    max-width: 80%;
+}
+
+.s-header header ul .menus {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 80%;
+    height: 100%;
+    background: #ddd;
+    transition: all 0.5s ease-in-out;
+}
+
+.s-header header.open ul .menus {
+    left: 20%;
+}
+
+.s-header header ul .menus ul {
+    max-width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.s-header header ul .menus li + li {
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+.s-header header .menu_open_btn,
+.s-header header .menu_close_btn {
+    display: block;
+}
+
+.s-header header .menu_close_btn {
+    position: absolute;
+    top: 20px;
+    right: 5%;
 }
