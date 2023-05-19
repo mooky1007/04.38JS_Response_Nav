@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: #222;
+    font-family: 'Poppins', sans-serif;
+    flex-direction: column;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 200px;
+    background: #eee;
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+}
+
+header ul {
+    width: 100%;
+    max-width: 90%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header ul .logo {
+    font-weight: 700;
+    margin-right: auto;
+}
+
+header ul .menus {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    right: 0;
+}
+
+header ul .menus li {
+    cursor: pointer;
+    color: #666;
+}
+
+header ul .menus li:hover {
+    color: #000;
+}
+
+
+header ul .menus li + li {
+    margin-left: 20px;
+}
+
+header .menu_close_btn,
+header .menu_open_btn {
+    display: none;
+}
+
+header button {
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    header ul .menus {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 80%;
+        height: 100%;
+        background: #ddd;
+        transition: all 0.5s ease-in-out;
+    }
+
+    header.open ul .menus {
+        left: 20%;
+    }
+
+    header ul .menus ul {
+        max-width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    header ul .menus li + li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    header .menu_open_btn,
+    header .menu_close_btn {
+        display: block;
+    }
+
+    header .menu_close_btn {
+        position: absolute;
+        top: 20px;
+        right: 5%;
+    }
+}
