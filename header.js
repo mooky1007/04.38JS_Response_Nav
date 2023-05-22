@@ -10,7 +10,7 @@ class Header {
         window.addEventListener('resize', this.resize.bind(this));
 
         this.menuOpenBtn.addEventListener('click', this.openMenu.bind(this));
-        this.menuCloseBtn.addEventListener('click', this.closeMenu.bind(this));        
+        this.menuCloseBtn.addEventListener('click', this.closeMenu.bind(this));
     }
 
     resize(){ window.innerWidth > 768 ? this.closeMenu() : null; }
